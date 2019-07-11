@@ -1,0 +1,46 @@
+Hi this is Calum from SSW.  Today I am here to talk to you about how you can bring high interest rates to boring tasks...with SSW.PointBank.
+
+First of all, lets consider how we think of tasks in the workplace today.  We have two sides of the equation, the employee and the employer.  Employees will likely consider the tasks assigned to them boring and repetitive, of no discernible benefit to themselves, and they probably feel like there are better things to be spending their time on (and I don't just mean non-work related things, because there obviously are, I mean cool and interesting projects to work on).  Over on the employer side, they will consider the tasks they are assiging to their employees to be valuable for the business, and they want to come up with a way of incentivising the completion of the tasks...however they may have decided that it is not worth the admin time to manage.
+
+Everyone loves scrum, because it gives feedback and lets you inspect and adapt as things change.  Employees are often an untapped source of useful knowledge, who could provide valuable details to help inform difficult business decisions.  If we could only unlock this knowledge, by overcoming admininistration costs and negative attitudes towards these tasks by employees.
+
+Here's a real life example to illustrate the problem
+(Read the speech bubbles)
+
+So, we have three goals that a system must achieve in order to be successful: it must be easy to use, it must be worthwhile to use from an employee's perspective, and it must require minimal admininistration time to set up and even less to use.  Once we have achieved these goals, the important data can begin to flow.
+
+Now, there are many gamified todo list apps in the market, however they are typically not gamified, business managed and completely automated. Trello is a potential candidate, it has options to create repetitive tasks and good API integration, however it is harder to do things like leaderboards and rewards
+Todoist is another option with user defined repeating tasks and completion and reports, but there is limited customisation or built in business based leaderboards or rewards
+
+Here is Trello, with the Repeat power-up activated, tasks can be scheduled to reset as required...the completion of tasks is still manual without API integration, and there are no built in leaderboards or rewards
+
+And here is Todoist, similarly to Trello, tasks can be set to recur at a specified frequency, but again without API integration, it is still a manual user job to tick them off as they are completed.  One good feature it has over Trello though is the Karma score, which is awarded as you complete tasks, and can be compared with other users from the organisation.
+
+So, to solve our problems, lets introduce SSW.PointBank.
+A platform with the goal of incentivising the completion of tasks. Once set up, it will seamlessly integrate with any existing system to automate the collection of data, the assignment of rewards, and the display of results in leaderboards.  Resulting in the engagement of employees via gamification, bringing high interest rates to boring tasks.
+
+Let's take a look at what it might look like in more detail. Here is the login screen, offering various ways to log in.
+
+Once we are in, we can manage user accounts and assign them to groups, so that everyone in the group can be assigned a task at the same time.
+
+Now that we have groups, we also need to create some tasks.  Let's say that every week, users need to complete three tasks in order to get a reward (such as a free lunch).  Well, we just need to add the three tasks like this.
+
+Then, we will add a reward, which will have a target group of users, a start and end time and a recurrence (in this case weekly).  Then we pick the tasks that will be required in order to earn the reward. Finally we will have options to send a standard email with the results, or a webhook that the results could be sent to if you want to do something a bit more fancy.  
+
+Here is what the standard result email might look like.
+
+As we can see here, the external systems will require some configuration, to send messages to the API whenever tasks are complete.  Here we have forms, sugarlearning and timepro, but it could be as simple as a logic app or anything else.
+
+And here is what happens every week, PointBank can either send a standard email directly or send the results to another system like a logic app for further processing.
+
+The other output portion highlighted here is the leaderboard, based on the historical task data, and also potential power bi integrations to unlock extra reporting power.
+
+And this is what the dashboard might look like...some graphs, some notifications of upcoming tasks and who is yet to complete them, and a log of your personal tasks as well.
+
+You would be able to view upcoming rewards assigned to you, and see who has done it and who hasn't
+
+Also you can see your own point score, tasks which are due soon and whether or not they are done yet, and a log of historical tasks you have done in the past.
+
+And here's the end result, everyone enjoying their delicious reward.
+
+So I want to thank you for listening to the presentation, hope you enjoyed it.  Have a good day.
