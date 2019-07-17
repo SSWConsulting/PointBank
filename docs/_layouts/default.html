@@ -18,20 +18,7 @@
         <h1 class="header">{{ site.title | default: site.github.repository_name }}</h1>
         <p class="header">{{ site.description | default: site.github.project_tagline }}</p>
 
-        <ul>
-          {% if site.show_downloads %}
-            <li class="download"><a class="buttons" href="{{ site.github.zip_url }}">Download ZIP</a></li>
-            <li class="download"><a class="buttons" href="{{ site.github.tar_url }}">Download TAR</a></li>
-          {% endif %}
-          <li><a class="buttons github" href="{{ site.github.repository_url }}">View On GitHub</a></li>
-        </ul>
-
         <p class="header">This project is maintained by <a class="header name" href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-
-        <ul class="header">
-          <li><a href="/">PowerPoint Specs</a></li>
-          <li><a href="/ui_mockups">UI Mockups</a></li>
-        </ul>
       </header>
 
       <section>
@@ -39,9 +26,54 @@
       </section>
 
       <footer>
+        <ul>
+          <li><a href="/">PowerPoint Specs</a></li>
+          <li><a href="/ui_mockups">UI Mockups</a></li>
+        </ul>
+        Issues
+        <div id="issues-container">
+          <ul id="issues"></ul>
+          <a href="{{ site.github.issues_url }}/new">Create Issue</a>
+        </div>
         <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
       </footer>
     </div>
+
+    <style>
+      #issues-container {
+        max-height: 30vh;
+      }
+    </style>
+
+    <script>
+
+        function loadJSONP(path, callbackName) {
+            var head = document.getElementsByTagName('head')[0];
+            var el = document.createElement('script');
+            el.src = path + '&callback=' + callbackName;
+            head.insertBefore(el, head.firstChild);
+        }
+
+        function APICallback(results) {
+            var content = document.getElementById("issues");
+            var ul = document.createElement("ul");
+            for (var i = 0; i < results.data.length; i++) {
+                var issue = results.data[i];
+                var li = document.createElement("li");
+                var a = document.createElement("a");
+                a.href = issue.html_url;
+                a.textContent = issue.title;
+                a.setAttribute("target", "_blank");
+                li.appendChild(a);
+                ul.appendChild(li);
+            }
+            content.appendChild(ul);
+        }
+        
+        loadJSONP(`https://api.github.com/repos/{{ site.github.owner_name }}/{{ site.github.repository_name }}/issues?state=open`, "APICallback");
+        
+    </script>
+
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     {% if site.google_analytics %}
       <script>
