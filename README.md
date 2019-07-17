@@ -1,1 +1,1 @@
-<iframe src='https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fgithub.com%2Fwicksipedia%2FPointBank%2Fraw%2Fmaster%2FDocumentation%2FSSW.PointBank.pptx' width='100%' height='600px' frameborder='0'>
+<iframe src='https://view.officeapps.live.com/op/view.aspx?src={{ site.github.url | url_encode }}%2Fraw%2Fmaster%2FDocumentation%2FSSW.PointBank.pptx' width='100%' height='600px' frameborder='0'>
