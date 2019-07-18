@@ -17,13 +17,13 @@
 
     <div class="container-fluid flex-shrink-0" style="padding-top: 75px;">
       <div class="row">
-        <div class="col-lg-2 order-md-last order-lg-first">
-          {% include issues.html %} 
-        </div>
-        <div class="col-lg-10">
+        <div class="col-md-12 col-lg-10">
           <main role="main">
             {{ content }}
           </main>
+        </div>
+        <div class="col-md-12 col-lg-2 order-lg-first">
+          {% include issues.html %} 
         </div>
       </div>
     </div>
