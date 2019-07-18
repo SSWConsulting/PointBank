@@ -14,8 +14,13 @@
     }
 </style>
 
+# This is a nice view of all the images in GitHub
+
 <div class="container">
     <iframe
-        src='https://view.officeapps.live.com/op/view.aspx?src={{ site.github.repository_url | url_encode }}%2Fraw%2Fmaster%2FDocumentation%2FSSW.PointBank.pptx' 
+        src='https://view.officeapps.live.com/op/view.aspx?src={{ site.github.repository_url | url_encode }}%2FSSW.PointBank.pptx' 
         frameborder='0'></iframe>
 </div>
+
+
+  TODO: add link to file in repo

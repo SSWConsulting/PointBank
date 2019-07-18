@@ -1,15 +1,9 @@
----
-mockups:
-    - 00 Login.png
-    - 01 Dashboard.png
-    - 02 My tasks.png
-    - 03 Reward list.png
-    - 04 Admin - Task list.png
-    - 05 Admin - Add reward.png
-    - 06 Admin - Configure users and groups.png
----
 
-{% for mockup in page.mockups %}
-  <h2>{{mockup}}</h2>
-  <img src="{{ site.github.repository_url }}/blob/master/Documentation/Screen%20Designs/{{ mockup | attr_encode }}?raw=true">
+# This is a nice view of all the images in GitHub
+{% assign screen_designs = site.static_files | where: "screen_design", true %}
+{% for mockup in screen_designs %}
+  <h3>{{ mockup.name }}</h3>
+  <a href="{{ site.github.repository_url }}/tree/master/docs{{ mockup.path | attr_encode }}">
+    <img src="{{ mockup.path }}">
+  </a>
 {% endfor %}
