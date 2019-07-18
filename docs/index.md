@@ -8,4 +8,11 @@
             </div>
         </div>
     </div>    
+    <div class="row">
+        <div class="col">
+            <p>
+                {{ site.description | default: site.github.project_tagline }}
+            </p>
+        </div>
+    </div>    
 </div>

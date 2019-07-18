@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="col">
-        <iframe style="height: 50vh;"
+        <iframe style="height:50vh;width:100%;"
             src='https://view.officeapps.live.com/op/view.aspx?src={{ site.github.repository_url | url_encode }}{{ site.github_raw_root | url_encode }}%2Fassets%2FSSW.PointBank.pptx' 
             frameborder='0'></iframe>
         <p>
