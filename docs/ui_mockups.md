@@ -7,6 +7,6 @@ This is a nice view of all the UI mockups in GitHub
 {% for mockup in screen_designs %}
   <h3>{{ mockup.name }}</h3>
   <a href="{{ site.github.repository_url }}{{ site.github_source_root }}{{ mockup.path | attr_encode }}">
-    <img src="{{ mockup.path }}">
+    <img src="/PointBank/{{ mockup.path }}">
   </a>
 {% endfor %}
