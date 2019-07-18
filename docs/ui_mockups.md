@@ -1,8 +1,6 @@
 
 {% include alert.html text="Add your feedback to the UI Mockups through GitHub issues (on the left)" %}
 
-This is a nice view of all the UI mockups in GitHub
-
 {% assign screen_designs = site.static_files | where: "screen_design", true %}
 {% for mockup in screen_designs %}
   <div class="row">
@@ -14,3 +12,10 @@ This is a nice view of all the UI mockups in GitHub
     </div>
   </div>
 {% endfor %}
+
+
+<div class="row">
+  <div class="col">
+    <p>This is a nice view of all the <a href="{{ site.github.repository_url }}{{ site.github_source_root }}/assets/screen_designs">UI mockups in GitHub</a></p>
+  </div>
+</div>
