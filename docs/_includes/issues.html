@@ -1,0 +1,41 @@
+
+<a href="{{ site.github.issues_url }}/new">Create Issue</a>
+
+<table id="issues" class="table table-striped">
+    <tr>
+        <th>Current Open Issues</th>
+    </tr>
+</table>
+
+<style>
+    #issues-container {
+        max-height: 30vh;
+    }
+</style>
+
+<script>
+
+    function loadJSONP(path, callbackName) {
+        var head = document.getElementsByTagName('head')[0];
+        var el = document.createElement('script');
+        el.src = path + '&callback=' + callbackName;
+        head.insertBefore(el, head.firstChild);
+    }
+
+    function APICallback(results) {
+        var table = document.getElementById("issues");
+        for (var i = 0; i < results.data.length; i++) {
+            var issue = results.data[i];
+            var row = table.insertRow();
+            var cell1 = row.insertCell(0);
+            var a = document.createElement("a");
+            a.href = issue.html_url;
+            a.textContent = issue.title;
+            a.setAttribute("target", "_blank");
+            cell1.appendChild(a);
+        }
+    }
+    
+    loadJSONP(`https://api.github.com/repos/{{ site.github.owner_name }}/{{ site.github.repository_name }}/issues?state=open`, "APICallback");
+    
+</script>
