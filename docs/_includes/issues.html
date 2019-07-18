@@ -3,7 +3,9 @@
 
 <table id="issues" class="table table-striped">
     <tr>
-        <th>Current Open Issues</th>
+        <th>
+            <a href="{{ site.github.issues_url }}">Current Open Issues</a>
+        </th>
     </tr>
 </table>
 
@@ -24,15 +26,22 @@
 
     function APICallback(results) {
         var table = document.getElementById("issues");
-        for (var i = 0; i < results.data.length; i++) {
-            var issue = results.data[i];
+
+        if (results.data) {
+            for (var i = 0; i < results.data.length; i++) {
+                var issue = results.data[i];
+                var row = table.insertRow();
+                var cell1 = row.insertCell(0);
+                var a = document.createElement("a");
+                a.href = issue.html_url;
+                a.textContent = issue.title;
+                a.setAttribute("target", "_blank");
+                cell1.appendChild(a);
+            }
+        } else {
             var row = table.insertRow();
             var cell1 = row.insertCell(0);
-            var a = document.createElement("a");
-            a.href = issue.html_url;
-            a.textContent = issue.title;
-            a.setAttribute("target", "_blank");
-            cell1.appendChild(a);
+            cell1.innerText = results.message;
         }
     }
     
