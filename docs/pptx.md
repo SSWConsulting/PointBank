@@ -1,11 +1,5 @@
 <style>
-    .container {
-        position: relative;
-        width: calc(100vw - 350px);
-        height: 50vh;
-        padding-bottom: 56.25%;
-    }
-    .container > iframe {
+    iframe {
         position: absolute;
         top: 0;
         left: 0;
